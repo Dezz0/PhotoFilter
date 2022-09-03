@@ -1,0 +1,63 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 15px;
+}
+
+.file-uploader {
+  display: flex;
+}
+
+.file-uploader input {
+  z-index: -1;
+  visibility: hidden;
+  position: absolute;
+}
+
+.file-uploader--btn {
+  cursor: pointer;
+  border: 1px solid black;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  width: 120px;
+  height: 35px;
+  border-radius: 7px;
+}
+
+.download {
+  background: #D19F62;
+  margin-left: 25px;
+  margin-right: 15px;
+}
+
+.upload {
+  display: inline-block;
+  background: aliceblue;
+  color: black;
+  line-height: 35px;
+}
+
+@media screen and (max-width: 580px) {
+  .header {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .logo {
+    margin-left: 0px;
+  }
+
+  .download {
+    margin-right: 0px;
+  }
+}
