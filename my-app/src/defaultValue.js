@@ -26,3 +26,5 @@ export const initialStateIcons = [
     selected: false
   }
 ];
+
+export const fileReader = new FileReader();

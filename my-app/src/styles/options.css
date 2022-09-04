@@ -58,7 +58,6 @@
   border-radius: 8px;
   height: 5px;
   background-color: #5f5f5f;
-  cursor: pointer;
 }
 
 .options-slider--range::-webkit-slider-thumb {
@@ -67,7 +66,6 @@
   width: 20px;
   height: 20px;
   border-radius: 10px;
-  cursor: pointer;
 }
 
 
