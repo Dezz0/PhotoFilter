@@ -1,9 +1,9 @@
 .image {
   position: relative;
-  max-height: 600px;
-  height: 67vw;
-  max-width: 800px;
-  width: 90%;
+  max-height: 510px;
+  height: 60vw;
+  max-width: 680px;
+  width: 80%;
   margin: 0 15px;
   border: 5px dashed aliceblue;
   display: flex;
@@ -26,6 +26,10 @@
   width: 50%;
 }
 
+.foreground-img {
+  background-position: center;
+}
+
 .image-slider {
   position: absolute;
   -webkit-appearance: none;
@@ -39,8 +43,8 @@
   background-color: #ffffff;
   border: 1px solid #bdc3c7;
   width: 9px;
-  max-height: 600px;
-  height: 67vw;
+  max-height: 510px;
+  height: 60vw;
   cursor: col-resize;
 }
 

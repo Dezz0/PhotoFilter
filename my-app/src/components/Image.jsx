@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { fileReader, initialStateStyles } from "../defaultValue";
+import { useDispatch, useSelector } from "react-redux";
+import { fileReader } from "../defaultValue";
 import { isEmpty } from "../helper";
-import { image } from "../slice/editablePhoto";
-import { options } from "../slice/optionsSlice";
+import { changeValueFilter, filters, setDefaultValueFilters } from "../slice/customFilters";
+import { image, setURLImage } from "../slice/editablePhoto";
+import { options, setDefaultValueOptions } from "../slice/optionsSlice";
 import "../styles/image.css";
 
 export default function Image() {
-  const [styles, setStyles] = useState(initialStateStyles);
+  const dispatch = useDispatch();
+
+  const styles = useSelector(filters);
   const [imageURL, setImageURL] = useState();
   const [sliderValue, setSliderValue] = useState(50);
 
@@ -16,14 +19,21 @@ export default function Image() {
   const id = option[0].id;
   const value = option[0].value;
 
-  const getImage = useSelector(image);
-
+  const currentImage = useSelector(image);
   fileReader.onloadend = () => {
     setImageURL(fileReader.result);
+    dispatch(setURLImage(fileReader.result));
   };
 
   useEffect(() => {
-    setStyles({ ...styles, [id]: value });
+    dispatch(setDefaultValueOptions());
+    setTimeout(() => {
+      dispatch(setDefaultValueFilters());
+    });
+  }, [currentImage, dispatch]);
+
+  useEffect(() => {
+    dispatch(changeValueFilter({ id, value }));
   }, [id, value]);
 
   function handleChange(e) {
@@ -46,7 +56,7 @@ export default function Image() {
           saturate(${styles.saturate})
           sepia(${styles.sepia})
           `,
-          backgroundImage: isEmpty(getImage)
+          backgroundImage: isEmpty(currentImage)
             ? "url(https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg)"
             : `url(${imageURL})`
         }}
@@ -55,7 +65,7 @@ export default function Image() {
         className="editable-photo background-img"
         style={{
           width: `${sliderValue}%`,
-          backgroundImage: isEmpty(getImage)
+          backgroundImage: isEmpty(currentImage)
             ? "url(https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg)"
             : `url(${imageURL})`
         }}
@@ -67,11 +77,11 @@ export default function Image() {
         max="100"
         value={sliderValue}
         onChange={(e) => handleChange(e)}
-        style={{ visibility: isEmpty(getImage) ? "hidden" : "visible" }}
+        style={{ visibility: isEmpty(currentImage) ? "hidden" : "visible" }}
       />
       <div
         className="image-btn-slider"
-        style={{ left: `calc(${sliderValue}% - 19px)`, visibility: isEmpty(getImage) ? "hidden" : "visible" }}
+        style={{ left: `calc(${sliderValue}% - 19px)`, visibility: isEmpty(currentImage) ? "hidden" : "visible" }}
       ></div>
     </div>
   );

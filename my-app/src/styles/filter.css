@@ -1,0 +1,38 @@
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 250px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 20px 15px;
+}
+
+.filters-icon {
+  height: 70px;
+  min-width: 70px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+
+.filters-icon:not(:last-child) {
+  margin-right: 15px;
+}
+
+@media screen and (max-width: 505px) {
+  .filters {
+    justify-content: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .filters::-webkit-scrollbar {
+    height: 0px;
+  }
+}

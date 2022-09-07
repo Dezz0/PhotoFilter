@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { initialStateStyles } from "../defaultValue";
 
 const initialState = [
   { id: "blur", name: "Размытие", value: 0, step: 1, minValue: 0, maxValue: 15, hidden: false },
@@ -29,11 +30,21 @@ export const optionsSlice = createSlice({
       state.map((option) => {
         option.id === action.payload ? (option.hidden = false) : (option.hidden = true);
       });
+    },
+    setDefaultValueOptions(state) {
+      state.forEach((option) => {
+        option.value = initialStateStyles[option.id];
+      });
+    },
+    setCustomOptions(state, action) {
+      state.forEach((option) => {
+        option.value = action.payload[option.id];
+      });
     }
   }
 });
 
-export const { changeCurrentOption, selectNewOption } = optionsSlice.actions;
+export const { changeCurrentOption, selectNewOption, setDefaultValueOptions, setCustomOptions } = optionsSlice.actions;
 
 export const options = (state) => state.options;
 

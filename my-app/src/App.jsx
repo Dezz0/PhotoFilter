@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Image from "./components/Image";
 import Options from "./components/Options";
+import Popup from "./components/subcomponents/Popup";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Image />
         <Options />
         <Filters />
+        <Popup />
       </div>
       <Footer />
     </>

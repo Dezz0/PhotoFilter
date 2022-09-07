@@ -27,4 +27,73 @@ export const initialStateIcons = [
   }
 ];
 
+export const readyFilters = [
+  {
+    blur: 0,
+    brightness: 1,
+    contrast: 1,
+    grayscale: 0,
+    "hue-rotate": 0,
+    invert: 0,
+    opacity: 1,
+    saturate: 1,
+    sepia: 0
+  } /* default */,
+  {
+    blur: 0,
+    brightness: 1,
+    contrast: 1,
+    grayscale: 1,
+    "hue-rotate": 0,
+    invert: 0,
+    opacity: 1,
+    saturate: 0,
+    sepia: 0
+  } /* black and white */,
+  {
+    blur: 0,
+    brightness: 1,
+    contrast: 1,
+    grayscale: 0,
+    "hue-rotate": 0,
+    invert: 1,
+    opacity: 1,
+    saturate: 1,
+    sepia: 0
+  } /* negative */,
+  {
+    blur: 0,
+    brightness: 1,
+    contrast: 1,
+    grayscale: 0,
+    "hue-rotate": 0,
+    invert: 0,
+    opacity: 1,
+    saturate: 1,
+    sepia: 1
+  } /* sepia */,
+  {
+    blur: 2,
+    brightness: 0.6,
+    contrast: 1,
+    grayscale: 0,
+    "hue-rotate": 295,
+    invert: 0,
+    opacity: 1,
+    saturate: 2,
+    sepia: 0.6
+  } /* purple */,
+  {
+    blur: 0,
+    brightness: 2,
+    contrast: 0.8,
+    grayscale: 0,
+    "hue-rotate": 0,
+    invert: 0,
+    opacity: 1,
+    saturate: 0.4,
+    sepia: 0
+  } /* worm black and white */
+];
+
 export const fileReader = new FileReader();

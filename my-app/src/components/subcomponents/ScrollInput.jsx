@@ -6,7 +6,7 @@ import { changeCurrentOption, options } from "../../slice/optionsSlice";
 
 export default function ScrollInput() {
   const allOptions = useSelector(options);
-  const getImage = useSelector(image);
+  const currentImage = useSelector(image);
   const dispatch = useDispatch();
 
   const option = allOptions.filter((option) => option.hidden === false);
@@ -28,8 +28,8 @@ export default function ScrollInput() {
           min={option[0].minValue}
           max={option[0].maxValue}
           onChange={(e) => handleChange(e)}
-          disabled={isEmpty(getImage)}
-          style={isEmpty(getImage) ? { cursor: "no-drop" } : { cursor: "pointer" }}
+          disabled={isEmpty(currentImage)}
+          style={isEmpty(currentImage) ? { cursor: "no-drop" } : { cursor: "pointer" }}
         />
         <span>{option[0].maxValue}</span>
       </div>
