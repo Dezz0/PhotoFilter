@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/PhotoFilter/static/css/main.704655ee.css",
+    "main.css": "/PhotoFilter/static/css/main.ec5ddb6d.css",
     "main.js": "/PhotoFilter/static/js/main.8cf534bb.js",
     "index.html": "/PhotoFilter/index.html",
-    "main.704655ee.css.map": "/PhotoFilter/static/css/main.704655ee.css.map",
+    "main.ec5ddb6d.css.map": "/PhotoFilter/static/css/main.ec5ddb6d.css.map",
     "main.8cf534bb.js.map": "/PhotoFilter/static/js/main.8cf534bb.js.map"
   },
   "entrypoints": [
-    "static/css/main.704655ee.css",
+    "static/css/main.ec5ddb6d.css",
     "static/js/main.8cf534bb.js"
   ]
 }
