@@ -26,10 +26,6 @@
   width: 50%;
 }
 
-.foreground-img {
-  background-position: center;
-}
-
 .image-slider {
   position: absolute;
   -webkit-appearance: none;
